@@ -33,3 +33,14 @@ export default function App() {
     const trimmedDescription = description.trim();
     const trimmedPrice = price.trim();
     const numericPrice = Number(trimmedPrice);
+
+    
+    if (!trimmedName || !trimmedDescription || !course || !trimmedPrice) {
+      setError('Please complete all fields before adding the dish.');
+      return;
+    }
+
+    if (!Number.isFinite(numericPrice) || numericPrice <= 0) {
+      setError('Enter a valid price greater than R0.00.');
+      return;
+    }
