@@ -12,3 +12,14 @@ type MenuItem = {
   course: Course;
   price: number;
 };
+
+const COURSES: Course[] = ['Starter', 'Main Course', 'Dessert'];
+
+export default function App() {
+  const [dishName, setDishName] = useState('');
+  const [description, setDescription] = useState('');
+  const [course, setCourse] = useState<Course | ''>('');
+  const [price, setPrice] = useState('');
+  const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
