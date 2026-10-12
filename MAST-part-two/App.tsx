@@ -23,3 +23,13 @@ export default function App() {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+
+  const addMenuItem = () => {
+    Keyboard.dismiss();
+    setError('');
+    setSuccess('');
+
+    const trimmedName = dishName.trim();
+    const trimmedDescription = description.trim();
+    const trimmedPrice = price.trim();
+    const numericPrice = Number(trimmedPrice);
